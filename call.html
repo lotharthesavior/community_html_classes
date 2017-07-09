@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>HTML Classes</title>
+
+	<style type="text/css">
+
+		/*  ==================================================================
+		====================== general =======================================
+		==================================================================  */
+
+		body{
+			padding: 0px;
+			margin: 0px;
+		}
+
+		p{
+			margin: 1em;
+		}
+
+		.step1,
+		.step2,
+		.step3{
+			height: 500px;
+			background-color: #D0D0D0;
+			position: absolute;
+			top: 0px;
+			width: 100%;
+			box-sizing: border-box;
+			border: 0px solid #000;
+			overflow: hidden;
+		}
+
+		.step1{
+			padding: 10px;
+			padding-top: 50px;
+			z-index: 1;
+			text-align: center;
+			background-color: #FBF4E7;
+		}
+
+		.step2,
+		.step3{
+			z-index: 2;
+			max-height: 0px;
+			text-align: center;
+			background-color: #C7C1C6;
+			
+			transition: 
+				max-height 1s ease-in,
+				border-width 1s,
+				padding 1s;
+		    -webkit-transition: 
+		    	max-height 1s ease-in,
+		    	border-width 1s,
+				padding 1s;
+		    -moz-transition: 
+		    	max-height 1s ease-in,
+		    	border-width 1s,
+				padding 1s;
+		    -o-transition: 
+		    	max-height 1s ease-in,
+		    	border-width 1s,
+				padding 1s;
+		}
+
+		.step2 p,
+		.step2 ul,
+		.step3 p,
+		.step3 ul{
+			width: 60%;
+			margin: 0 auto;
+			text-align: left;
+		}
+
+		.step2 ul,
+		.step3 ul{
+			margin-top: 15px;
+			margin-bottom: 15px;
+		}
+
+		.step3{
+			z-index: 3;
+			max-height: 0px;
+		}
+
+		.step1 .back_btn{
+			margin-top: 15px;
+		}
+
+		.back_btn{
+			height: auto;
+		}
+
+		.back_btn .mouse_react{
+			padding: 5px;
+			border: 1px solid #000;
+			border-radius: 4px;
+			cursor: pointer;
+
+			border: 0;
+			box-sizing: border-box;
+			padding: 5px;
+
+			/*Using inset box-shadow instead of border for sizing simplicity*/
+			box-shadow: inset 0 0 0 1px #000;
+			color: #000;
+			font-size: 20px;
+			font-weight: bold;
+
+			/*Required, since we're setting absolute on pseudo-elements*/
+			position: relative;
+			vertical-align: middle;
+
+			background-color: #fff;
+
+			transition: 
+				background-color 1s,
+				color 2.25s;
+		    -webkit-transition: 
+		    	background-color 1s,
+				color 2.25s;
+		    -moz-transition: 
+		    	background-color 1s,
+				color 2.25s;
+		    -o-transition: 
+				background-color 1s,
+				color 2.25s;
+		}
+		
+		.mouse_react:hover {
+			/*background-color: #FF3E30;*/ /* red */
+			background-color: #0F3542; /* blue */
+		    color: #FBF4E7;
+		}
+
+		/*  ==================================================================
+		====================== step 2 ========================================
+		==================================================================  */
+
+		input[name="step2_call"]:checked ~ .step2{
+			max-height: 1000px;
+			overflow: hidden;
+			border: 1px solid #000;
+			padding: 10px;
+		}
+
+		input[name="step3_call"]:checked ~ .step3{
+			max-height: 1000px;
+			overflow: hidden;
+			border: 1px solid #000;
+			padding: 10px;
+		}
+
+		/*  ==================================================================
+		====================== step 3 ========================================
+		==================================================================  */
+
+	</style>
+	<link href="http://addtocalendar.com/atc/1.5/atc-style-blue.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+
+<input type="checkbox" name="step2_call" id="step2_call" value="show"/>
+<input type="checkbox" name="step3_call" id="step3_call" value="show"/>
+
+<!-- step 1 -->
+<div class="step1">
+	<h1>Are you interested in HTML classes?</h1>
+	<div class="back_btn"><label class="mouse_react" for="step2_call">Yes</label></div>
+</div>
+
+<!-- step 2 -->
+<div class="step2">
+	<h2>Great! Here is more information:</h2>
+
+	<p>Practice HTML classes are offered as a service to the community, completely free of charge and without monthly commitment. Our objective is to help those who are starting to study programming but have very little to no experience. Classes will eventually be offered on a bi-weekly basis. You'll need a laptop and to come ready to have some serious fun with code!</p>
+
+	<ul>
+		<li>XML structure</li>
+		<li>CSS</li>
+		<li>Grid System</li>
+		<li>Tables</li>
+		<li>Typography</li>
+		<li>Forms</li>
+	</ul>
+
+	<div class="back_btn">
+		<label class="mouse_react" for="step2_call">Maybe not right now</label>
+		<label class="mouse_react" for="step3_call">Great! When it starts?</label>
+	</div>
+</div>
+
+<div class="step3">
+	<h2>Upcoming classes:</h2>
+
+	<ul>
+		<li>Burnaby, Friday, July 21 - 6:00 to 7:30 pm</li>
+		<li>Burnaby, Friday, August ## - to be confirmed</li>
+		<li>Burnaby, Friday, August ## - to be confirmed</li>
+		<li>Burnaby, Friday, September ## - to be confirmed</li>
+		<li>Burnaby, Friday, September ## - to be confirmed</li>
+	</ul>
+
+	<p>Email us for more information: <a href="mailto:info@burnabybornagain.ca">info@burnabybornagain.ca</a></p>
+
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+
+	<div class="back_btn">
+		<label class="mouse_react" for="step3_call">Go Back</label>
+	</div>
+</div>
+
+</body>
+</html>
